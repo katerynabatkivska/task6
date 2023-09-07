@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Модальне вікно</title>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button onclick="showModal()">Показати модальне вікно</button>
+    <div id="modal" style="display: none;">
+        <p id="output"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+function showModal() {
+    var list = document.getElementById("list");
+    var listItems = list.getElementsByTagName("li");
+    var firstElement = listItems[0].textContent;
+    var lastElement = listItems[listItems.length - 1].textContent;
+    var secondElement = listItems[1].textContent;
+    var fourthElement = listItems[3].textContent;
+    var thirdElement = listItems[2].textContent;
+    var result = firstElement + ", " + lastElement + ", " + secondElement + ", " + fourthElement + ", " + thirdElement;
+    var modal = document.getElementById("modal");
+    var output = document.getElementById("output");
+    output.textContent = result;
+    modal.style.display = "block";
+}
